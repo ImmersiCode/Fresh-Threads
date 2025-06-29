@@ -1,0 +1,13 @@
+twilio:
+  account-sid: AC93f8f2fdc5ab0c8bb118a3a6b1869528
+  auth-token: db844f8915aa4e6815135893d2dd176f
+  from-number: "+17194178274"
+
+jwt:
+  secret: VhT7n2qSKgEZab92uQoK9F3WJDcMnxAj3hrcJv4A4Us=
+  expiration: 3600000
+
+admin:
+  users:
+    "1234": "5678"
+    "2345": "6789"
