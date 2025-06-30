@@ -22,12 +22,11 @@ function LoginPage() {
 
 const handleVerifyOtp = async () => {
   try {
-    const res = await verifyOtp(phone, otp); // POST /auth/verify-otp
+    const res = await verifyOtp(phone, otp);
     const token = res.data.token;
 
     localStorage.setItem('token', token);
 
-    // Get user info (phone, role)
     const userRes = await API.get('/me', {
       headers: {
         Authorization: `Bearer ${token}`,

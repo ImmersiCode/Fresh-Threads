@@ -42,7 +42,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             String phone = claims.getSubject();
             String role = claims.get("role", String.class);
 
-            // ✅ Set role as authority
             List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
 
             UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
@@ -51,7 +50,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             SecurityContextHolder.getContext().setAuthentication(auth);
 
-            // Optionally make role available in request
             request.setAttribute("role", role);
 
         } catch (JwtException e) {

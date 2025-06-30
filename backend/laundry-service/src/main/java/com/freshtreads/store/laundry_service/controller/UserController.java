@@ -34,5 +34,6 @@ public class UserController {
         }
     }
 
-    record UserResponse(String phone, String role) {}
+    record UserResponse(String phone, String role) {
+    }
 }

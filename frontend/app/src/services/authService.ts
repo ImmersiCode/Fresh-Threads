@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:8080', // Change this if your backend runs on a different port
+  baseURL: 'http://localhost:8080',
 });
 
 export const requestOtp = (phone: string) => API.post('/auth/request-otp', { phone });

@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @RequiredArgsConstructor
 public class TwilioService {
     private final TwilioConfig config;
-    private final ConcurrentHashMap<String , String> otpMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, String> otpMap = new ConcurrentHashMap<>();
     private final Random random = new Random();
 
     public void sendOtp(String phone) {
@@ -24,7 +24,7 @@ public class TwilioService {
         Message.creator(
                 new com.twilio.type.PhoneNumber(phone),
                 new com.twilio.type.PhoneNumber(config.getFromNumber()),
-        "Your Fresh Threads OTP is: " + otp).create();
+                "Your Fresh Threads OTP is: " + otp).create();
     }
 
     public boolean verifyOtp(String phone, String otp) {

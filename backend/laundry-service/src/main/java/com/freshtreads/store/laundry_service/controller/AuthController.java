@@ -29,11 +29,11 @@ public class AuthController {
     @PostMapping("/verify-otp")
     public ResponseEntity<?> verifyOtp(@RequestBody verifyRequest request) {
         boolean valid = twilioService.verifyOtp(request.getPhone(), request.getOtp());
-        if(!valid) return ResponseEntity.status(401).body("Invalid OTP");
+        if (!valid) return ResponseEntity.status(401).body("Invalid OTP");
 
         twilioService.clearOtp(request.getPhone());
         String token = jwtUtil.generateToken(request.getPhone(), "USER");
-        return  ResponseEntity.ok(new TokenResponse(token));
+        return ResponseEntity.ok(new TokenResponse(token));
     }
 
     @PostMapping("/admin-login")
@@ -54,10 +54,18 @@ public class AuthController {
     }
 
 
+    @Data
+    static class PhoneRequest {
+        private String phone;
+    }
 
-    @Data static class PhoneRequest { private String phone; }
+    @Data
+    static class verifyRequest {
+        private String phone, otp;
+    }
 
-    @Data static class verifyRequest { private String phone, otp; }
-
-    @Data static class TokenResponse { private final String token; }
+    @Data
+    static class TokenResponse {
+        private final String token;
+    }
 }

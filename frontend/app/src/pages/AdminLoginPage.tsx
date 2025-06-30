@@ -13,8 +13,6 @@ function AdminLoginPage() {
       const res = await adminLogin(phone, password);
       const token = res.data.token;
       localStorage.setItem('token', token);
-
-      // Redirect to /admin
       navigate('/admin');
     } catch (err) {
       setError('Invalid admin credentials');
