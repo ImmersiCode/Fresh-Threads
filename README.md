@@ -1,5 +1,9 @@
 # Fresh Threads
+
+
 Phone Mode
+
+
 <img width="518" height="460" alt="image" src="https://github.com/user-attachments/assets/1215271e-23d7-44b8-b756-69dcd6702d92" />
 
 <img width="527" height="459" alt="image" src="https://github.com/user-attachments/assets/7fc1ba89-f6a4-4231-ae7d-042acc66f2dc" />
